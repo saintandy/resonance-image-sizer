@@ -61,7 +61,7 @@ function addImageSizeOverlays() {
     surplus = (height * width) * ratio;
     totalSurplus += surplus;
 
-    surplus = (surplus / 1000000).toFixed(2) / 2 + " MB";
+    surplus = (surplus / 1024 / 1024).toFixed(2) / 2 + " MB";
 
     const card1 = createOverlay(`${width}px × ${height}px`, '#0B6D7A');
     const card2 = createOverlay(`${naturalWidth}px × ${naturalHeight}px`, '#14C9E0');
@@ -103,7 +103,7 @@ function addImageSizeOverlays() {
     wrapper.appendChild(card4);
   });
 
-  const cardBottomRight = createOverlay('~ Total Surplus: ' + (totalSurplus / 1000000).toFixed(2) / 2 + " MB", '#EF4444');
+  const cardBottomRight = createOverlay('~ Total Surplus: ' + (totalSurplus / 1024 / 1024).toFixed(2) / 2 + " MB", '#EF4444');
   cardBottomRight.style.bottom = '6px';
   cardBottomRight.style.right = '6px';
   cardBottomRight.style.fontSize = '14px';
